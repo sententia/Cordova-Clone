@@ -20,3 +20,10 @@ For those who are lazy like the rest of us:
 ```
 
 If you would like to change the settings or data that you would get back from the api, such as geolocation, open the index.html file found in the cordova-clone folder and use the interface to change the necessary items.
+
+**Please note**:
+If you're not serving up your app from a local server, such as mobile.local, you will have to tell chrome to open up with file access. To do this use this flag: 
+
+````
+--allow-files-access-from-files
+````

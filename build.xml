@@ -1,0 +1,19 @@
+<project name="cordovaclone" default="version">
+    <loadproperties srcfile="build.properties"/>
+    <target name="version">
+        <echo>Build Version ${version}</echo>
+    </target>
+    <target name="concat">
+        <echo>Combining files</echo>
+        <concat destfile="${build.dir}${build.file}" fixlastline="yes">
+            <header>/**
+             @license @PERSERVED_COMMENT@ 
+                */</header>
+            <fileset dir="${src.dir}" includes="**/*.js" excludes="main.js"/>
+            <filelist id="mainfile" dir="${src.dir}">
+                <file name="main.js"/>
+            </filelist>
+        </concat>
+        <echo >Finished: ${build.dir}${build.file}</echo>
+    </target>
+</project>

@@ -1,0 +1,22 @@
+{
+	"geolocation": 
+	{
+		"coords":
+		{
+			"latitude": null,
+			"longitude": null,
+			"altitude": null,
+			"accuracy": null,
+			"altitudeaccuracy": null,
+			"heading": null,
+			"speed": null,
+			"timestamp": null
+		},
+		"delay": null,
+		"positionerror":
+		{
+			"fail": 1,
+			"errorcode": 0
+		}
+	}
+}

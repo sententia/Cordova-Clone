@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Configure Cordova-Clone</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/smoothness/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+        <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+
+        
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div id="container">
+        <h1>Cordova-Clone Configurator</h1>
+        <hr/>
+            <div id="tabs">
+                <ul>
+                    <li><a href="#geolocation">GeoLocation</a></li>
+                </ul>
+                <div id="geolocation">
+                    <input type="button" value="Save Geolocation" style="float:right"/>
+                    <h3>Use HTML5 Geolocation</h3>
+                    <p>HTML5 Provides the necessary elements for geolocation, yet you can still use a mock one to achieve delay and fire errors for debuging purposes</p>
+
+                    <h3>Position Object:</h3>
+                    <p>This is the object returned on a successful retrieval of the devices position</p>
+                    <fieldset>
+                        <p>A set of geogrpahic coordinates <em>position.coords</em></p>
+                        <div class="inputfix">
+                            <label for="position-latitude">Latitude</label>
+                            <input type="text" name="position-latitude" id="position-latitude" placeholder="0.0"/>
+                        </div>
+                        <div class="inputfix">
+                            <label for="position-longitude">Longitude</label>
+                            <input type="text" name="position-longitude" id="position-longitude" placeholder="0.0"/>
+                        </div>
+                        <div class="inputfix">
+                            <label for="position-altitude">Altitude</label>
+                            <input type="text" name="position-altitude" id="position-altitude" placeholder="0.0"/>
+                        </div>
+                        <div class="inputfix">
+                            <label for="position-accuracy">Accuracy</label>
+                            <input type="text" name="position-accuracy" id="position-accuracy" placeholder="0"/>
+                        </div>
+                        <div class="inputfix">
+                            <label for="altitudeaccuracy">Altitude Accuracy</label>
+                            <input type="text" name="position-altitudeaccuracy" id="position-altitudeaccuracy" placeholder="0"/>
+                        </div>
+                        <div class="inputfix">
+                            <label for="position-heading">Heading</label>
+                            <input type="text" name="position-heading" id="position-heading" placeholder="0.0"/>
+                        </div>
+                        <div class="inputfix">
+                            <label for="position-speed">Speed</label>
+                            <input type="text" name="position-speed" id="position-speed" placeholder="0.0"/>
+                        </div>
+                        <p>Creation timestamp for cords object <em>position.timestamp</em></p>
+                        <div class="inputfix">
+                            <label for="position-timestamp">Time Stamp</label>
+                            <input type="text" name="position-timestamp" id="position-timestamp"/>
+                        </div>
+                    </fieldset>
+                    <hr/>
+                    <h3>Delay</h3>
+                    <fieldset>
+                        <div class="inputfix">
+                            <label for="position-delay">Delay before invocation</label>
+                            <input type="text" id="position-delay" name="position-delay" placeholder="1000"/>
+                        </div>
+                    </fieldset>
+                    <hr/>
+                    <h3>PositionError Object</h3>
+                    <p>This is the object returned on a failed retrieval of the devices position</p>
+                    <fieldset>
+                        <div class="inputfix">
+                            <label for="position-error-code">Cause fail?</label>
+                            <input type="radio" name="position-error-on" value="0" checked="checked"/> No
+                            <input type="radio" name="position-error-on" value="1"/> Yes
+                        <div class="inputfix">
+                            <label for="position-error-code">Error Code</label>
+                            <select id="position-error-code" name="position-error-code">
+                                <option value="0">PERMISSION_DENIED</option>
+                                <option value="1">POSITION_UNAVAILABLE</option>
+                                <option value="2">TIMEOUT</option>
+                            </select>
+                        </div>
+                    </fieldset>
+                <hr/>
+                </div>
+            </div>
+        </div>
+        
+        <script src="http:////ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+        <script src="js/main.js"></script>
+
+     
+    </body>
+</html>

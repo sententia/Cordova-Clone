@@ -54,11 +54,20 @@ function main(request,response) {
 						response.write(contents);
 						response.end();
 					});
+				} else {
+					response.writeHead(200, {'Content-Type': 'text/html'});
+					fs.readFile('index.html', {encoding: 'utf8'}, function(err, contents) {
+						response.write(contents);
+						response.end();
+					});
 				}
 			});
 		} else {
-			response.write('no file');
-			response.end();
+			response.writeHead(200, {'Content-Type': 'text/html'});
+			fs.readFile('index.html', {encoding: 'utf8'}, function(err, contents) {
+				response.write(contents);
+				response.end();
+			});
 		}
 	});
 	return;

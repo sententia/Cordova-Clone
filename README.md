@@ -14,7 +14,7 @@ This is a clone of the Cordova/Phonegap API. Well, Desktop Clone. See, there isn
 Current Status
 ==============
 
-So the gates have just opened. Sententia will be building components of the api as needed for his apps. If you want one desperatley please drop us a line. 
+So the gates have just opened. Sententia will be building components of the api as needed for his apps. If you want one desperately please drop us a line. 
 
 Contributing
 =============
@@ -50,7 +50,7 @@ For those who are lazy like the rest of us:
 How does it work?
 =================
 
-Cordova-Clone works by replacing the API objects with it's own. This means you get a dumbed down simulated version of the API. Everything (will be [It's coming... why not pitch in]) from Camera Capture to Device Info. It does this by using the Cordova-Clone Server. The server is the linkage between the config and cordova-clone. It can serve up images and resources to be used during execution which Cordova-Clone mimics as if it is the device. This enables you to develop your app as if you're on your device. 
+Cordova-Clone works by replacing the API objects with its own. This means you get a dumbed down simulated version of the API. Everything (will be [It's coming... why not pitch in]) from Camera Capture to Device Info. It does this by using the Cordova-Clone Server. The server is the linkage between the config and cordova-clone. It can serve up images and resources to be used during execution which Cordova-Clone mimics as if it is the device. This enables you to develop your app as if you're on your device. 
 
 Some quick resources!
 ======================

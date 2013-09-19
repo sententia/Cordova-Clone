@@ -32,6 +32,11 @@ CordovaClone = function() {
 	function parseContents() {
 		that.jsonObject = JSON.parse(this.response);
 	}
+
+	this.repairConfig = function() {
+		//TODO: If the JSON object get's damaged or lost
+		// Build a new one
+	};
 	
 
 

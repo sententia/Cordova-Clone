@@ -49,7 +49,8 @@ function main(request,response) {
 			fs.stat(pathstring, function(err, stats) {
 				if(stats.isFile()) {
 					var mimeType = mimeTypes[path.extname(pathstring).split(".")[1]];
-					response.writeHead(200, {'Content-Type': mimeType});
+					response.writeHead(200, {'Content-Type': mimeType,
+									'Access-Control-Allow-Origin': '*'});
 					fs.readFile(pathstring, {encoding: 'utf8'}, function(err, contents) {
 						response.write(contents);
 						response.end();
@@ -80,4 +81,4 @@ http.createServer(main).listen(9999, "localhost");
 
 console.log("Ladling the soup...");
 console.log("Cordova-Clone Server is now running on http:///localhost:9999");
-console.log("Navigate to http://localhost:9999/config/index.html to configure settings");
+console.log("Navigate to http://localhost:9999/ to configure pulgin settings");

@@ -10,19 +10,28 @@ CordovaClone = function() {
 	this.jsonObject = null;
 
 	/**
+	 * Fix for lexical scope during event handlers
+	 */
+	var that = this;
+
+	/**
 	 * Read contents of the config into the json object
 	 * @return {void}
 	 */
 	this.readConfig = function() {
-		var req = new XMLHTTPRequest();
+		var req = new XMLHttpRequest();
 		req.onload = parseContents;
 		req.open('get', 'http://localhost:9999/config/config.json');
 		req.send();
-
-		function parseContents() {
-
-		}
 	};
+
+	/**
+	 * Closure: Capture response and turn into json object
+	 * @return {void} 
+	 */
+	function parseContents() {
+		that.jsonObject = JSON.parse(this.response);
+	}
 	
 
 

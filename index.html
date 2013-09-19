@@ -26,10 +26,15 @@
                     <li><a href="#geolocation">GeoLocation</a></li>
                 </ul>
                 <div id="geolocation">
-                    <input type="button" value="Save Geolocation" style="float:right"/>
+                    <input type="button" value="Save Geolocation Settings" style="float:right"/>
                     <h3>Use HTML5 Geolocation</h3>
                     <p>HTML5 Provides the necessary elements for geolocation, yet you can still use a mock one to achieve delay and fire errors for debuging purposes</p>
-
+                    <hr/>
+                    <h3>Use Mock?</h3>
+                    <p>Do you want to mock the Geolocation Object</p>
+                    <input type="radio" name="position-mock" id="position-mock" value="1"/> Yes
+                    <input type="radio" name="position-mock" id="position-mock" value="0" checked="checked"/> No
+                    <hr/>
                     <h3>Position Object:</h3>
                     <p>This is the object returned on a successful retrieval of the devices position</p>
                     <fieldset>

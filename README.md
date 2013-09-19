@@ -1,7 +1,7 @@
 Cordova-Clone
 =============
 
-This is a clone of the Cordova/Phonegap API. Well, Desktop Clone. See, there isn't much support for Debugging Phonegap/Cordova Applications, so the Cordova-Clone was born. This not a substitue for actual device testing, however it is more of a development time booster. The beauty in developing for the web is the turn around. The constant building and testing which you see with phone SDKs can be a drag. If you have the entire Cordova/Phonegap API built into the browser you can then iron out majority of the bugs before it even hits the phone for actual play. 
+This is a clone of the Cordova/Phonegap API. Well, Desktop Clone. See, there isn't much support for Debugging Phonegap/Cordova Applications, so the Cordova-Clone was born. This is not a substitue for actual device testing, however it is more of a development time booster. The beauty in developing for the web is the turn around. The constant building and testing which you see with phone SDKs can be a drag. If you have the entire Cordova/Phonegap API built into the browser you can then iron out majority of the bugs before it even hits the phone for actual play. 
 
 ## Advantages
 * Perform all the natural calls as you would with a real device
@@ -61,3 +61,20 @@ Of course this is not a substitute for acutal device play. You might find your d
 * [jsHyBugger Community Edition - Javascript Debugger](http://www.jshybugger.org/)
 * [jsHyBugger Pro Edition - Javascript Debugger and HTML/CSSRemote Inspection (Commerical)](https://www.jshybugger.com/#/)
 * [Phonegap Build Debugger - Basically Weinre](http://phonegap.com) 
+
+License
+========
+
+ Copyright 2013 VCROWD(R) Pty. Ltd.
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.

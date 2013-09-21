@@ -16,6 +16,8 @@ Current Status
 
 So the gates have just opened. Sententia will be building components of the api as needed for his apps. If you want one desperately please drop us a line. 
 
+Please review to the version-history.md file for a more outlined list of progress
+
 Contributing
 =============
 

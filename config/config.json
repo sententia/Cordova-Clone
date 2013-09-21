@@ -6,17 +6,17 @@
 			"latitude": null,
 			"longitude": null,
 			"altitude": null,
-			"accuracy": null,
-			"altitudeaccuracy": null,
+			"accuracy": 100,
+			"altitudeAccuracy": null,
 			"heading": null,
-			"speed": null,
-			"timestamp": null
+			"speed": null
 		},
-		"delay": null,
+		"timestamp": null,
+		"delay": 5000,
+		"fail": 1,
 		"positionerror":
 		{
-			"fail": 1,
-			"errorcode": 0
+			"errorcode": 1
 		}
 	}
 }

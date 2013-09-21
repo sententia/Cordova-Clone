@@ -16,23 +16,6 @@
 */
             
 /**
- * navigator.geolocation
- */
-navigator.geolocation = {
-
-	getCurrentPosition: function(geolocationSuccess, geolocationError, geolocationOptions) {
-		
-	},
-
-	watchPosition: function() {
-
-	},
-
-	clearWatch: function(){
-
-	}
-};
-/**
  * Provide basic untilities
  */
 CordovaClone = function() {
@@ -47,6 +30,12 @@ CordovaClone = function() {
 	 * Fix for lexical scope during event handlers
 	 */
 	var that = this;
+
+	/**
+	 * Array for holding various interval timers
+	 * @type {Object}
+	 */
+	var timers = {};
 
 	/**
 	 * Read contents of the config into the json object
@@ -67,11 +56,51 @@ CordovaClone = function() {
 		that.jsonObject = JSON.parse(this.response);
 	}
 
+	/**
+	 * Repair the config file if it is damaged
+	 * @return {boolean} Succsessful?
+	 */
 	this.repairConfig = function() {
 		//TODO: If the JSON object get's damaged or lost
 		// Build a new one
 	};
-	
+
+	/**
+	 * Sets a delay for an event
+	 * @param {pointer} reference A reference to a javascript function
+	 * @param {integer} delay A integer representing milliseconds
+	 * @return {void}
+	 */
+	this.setDelay = function(reference, delay) {
+		// Don't do anything fancy just use the setTimeout()
+		// function
+		setTimeout(reference, delay);
+		return;
+	};
+
+	/**
+	 * Add a interval object to the timers object
+	 * @param {pointer} reference A reference to a javascript function
+	 * @param {string} name  A string ID for the interval
+	 * @param {integer} delay A dealy integer representing milliseconds
+	 */
+	this.setInterval = function(reference, name, delay) {
+		// Store the interval into the tiemrs list identifiable by name
+		var tempTimer = setInterval(reference, delay);
+		timers[name] = tempTimer;
+		return;
+	};
+
+	/**
+	 * Removes a interval object from the timers object
+	 * @param  {string} name A string ID for the interval
+	 * @return {void}      
+	 */
+	this.removeInterval = function(name) {
+		clearTimeout(timers[name]);
+		return;
+	};
+
 
 
 	// Let's make this a singleton
@@ -85,6 +114,110 @@ CordovaClone = function() {
 	return this;
 };
 /**
+ * navigator.geolocation
+ */
+navigator.geolocation.__proto__ = {
+
+	getCurrentPosition: function(geolocationSuccess, geolocationError, geolocationOptions) {
+		var successReference = geolocationSuccess;
+		var errorReference = geolocationError;
+
+		function errorCallback() {
+			var errorObject = new PositionError();
+			errorReference(errorObject);
+		}
+
+		function successCallback() {
+			var posObject = new Position();
+			successReference(posObject);
+		}
+
+		if(geolocationError) {
+			if(cordovaClone.jsonObject.geolocation.fail) {
+				if(cordovaClone.jsonObject.geolocation.delay) {
+					cordovaClone.setDelay(errorCallback, cordovaClone.jsonObject.geolocation.delay);
+					return;
+				} else {
+					geolocationError();
+					return;
+				}
+			}
+		}
+
+		if(cordovaClone.jsonObject.geolocation.delay) {
+			cordovaClone.setDelay(successCallback, cordovaClone.jsonObject.geolocation.delay);
+			return;
+		} else {
+			successCallback();
+			return;
+		}
+	},
+
+	watchPosition: function(geolocationSuccess, geolocationError, geolocationOptions) {
+		var successReference = geolocationSuccess;
+		var errorReference = geolocationError;
+		
+
+		function errorCallback() {
+			var errorObject = new PositionError();
+			errorReference(errorObject);
+		}
+
+		function successCallback() {
+			var posObject = new Position();
+			posObject.coords.altitude += Math.random();
+			posObject.coords.longitude += Math.random();
+			successReference(posObject);
+		}
+
+		if(geolocationError) {
+			if(cordovaClone.jsonObject.geolocation.fail) {
+				if(cordovaClone.jsonObject.geolocation.delay) {
+					cordovaClone.setDelay(errorCallback, cordovaClone.jsonObject.geolocation.delay);
+					return;
+				} else {
+					geolocationError();
+					return;
+				}
+			}
+		}
+
+		if(cordovaClone.jsonObject.geolocation.delay) {
+			cordovaClone.setInterval(successCallback, 'geoWatch', cordovaClone.jsonObject.geolocation.delay);
+			return;
+		} else {
+			successCallback();
+			return;
+		}
+	},
+
+	clearWatch: function(){
+		cordovaClone.removeInterval('geoWatch');
+		return;
+	}
+};
+
+/**
+ * Simplistic Position object
+ */
+var Position = function() {
+	this.coords = cordovaClone.jsonObject.geolocation.coords;
+	this.timestamp = cordovaClone.jsonObject.geolocation.timestamp;
+};
+
+/**
+ * Simplistic Position Error object
+ */
+var PositionError = function() {
+	this.PERMISSION_DENIED = 0;
+	this.POSITION_UNAVAILABLE = 1;
+	this.POSITION_TIMEOUT = 2;
+	this.code = cordovaClone.jsonObject.geolocation.positionerror.errorcode;
+	this.message = null;
+};
+
+
+/**
  * Bootstrapper
  */
 (function() {
@@ -93,4 +226,8 @@ CordovaClone = function() {
 	var deviceEvent = new Event('deviceready');
 	document.addEventListener('deviceready', main);
 	document.dispatchEvent(deviceEvent);
+
+	// Create the clone
+	window.cordovaClone = new CordovaClone();
+
 })();

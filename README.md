@@ -27,6 +27,8 @@ Requirements
 
 Very little, in fact you most probably already have it. If you're using Phonegap 3.0 or above you already have the requirements. Phonegap 3.0 CLI needs **Node.js** and so does Cordova-Clone. That's it!
 
+Ohh yeah, I'm build it in Chrome so I'm leaning more to that when developing, however it should be consistent through out the browsers, but not checking so you know.
+
 
 How to use?
 ============

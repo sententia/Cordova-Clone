@@ -32,7 +32,7 @@ CordovaClone = function() {
 	var that = this;
 
 	/**
-	 * Array for holding various interval timers
+	 * Object for holding various interval timers
 	 * @type {Object}
 	 */
 	var timers = {};
@@ -101,6 +101,43 @@ CordovaClone = function() {
 	this.removeInterval = function(name) {
 		clearTimeout(timers[name]);
 		return;
+	};
+
+	this.notice = function(message, timeout) {
+		var timeout = typeof timeout !== 'undefined' ? timeout : 3000;
+
+		var notifierContainer = document.getElementById('cordova-clone-notifier-container');
+		if(!notifierContainer) {
+			notifierContainer = document.createElement('div');
+			notifierContainer.style.position = 'fixed';
+			notifierContainer.style.right = '10px';
+			notifierContainer.style.bottom = '10px';
+			notifierContainer.style.display = 'block';
+			notifierContainer.setAttribute('id', 'cordova-clone-notifier-container');
+			document.body.appendChild(notifierContainer);
+		}
+
+		var notifier = document.createElement('div');
+		notifier.style.borderRadius = "5px";
+		notifier.style.backgroundColor = "#000000";
+		notifier.style.color = '#ffffff';
+		notifier.style.zIndex = 999;
+		notifier.setAttribute('id', 'cordova-clone-notifier-' + message);
+		notifier.style.padding = '10px';
+		notifier.style.margin = '5px';
+		notifier.style.boxShadow = "0px 0px 3px #000000";
+		notifier.style.opacity = 0.8;
+		var msg = document.createElement('p');
+		msg.innerText = message;
+		
+		notifier.appendChild(msg);
+		notifierContainer.appendChild(notifier);
+
+		// Set a timeout
+		setTimeout(function() {
+			notifierContainer.removeChild(notifier);
+		}, timeout);
+		
 	};
 
 
@@ -228,6 +265,51 @@ var PositionError = function() {
 	this.message = null;
 };
 
+/**
+ * This holds the notification plugin
+ */
+navigator.notification = {
+
+	alert: function(message, alertCallBack, title, buttonName) {
+		alert(message);
+		// Browser doesn't provide call back so mock it.
+		if(alertCallBack) {
+			alertCallBack();
+		}
+	},
+
+	confirm: function(message, confirmCallBack, title, buttonLabels) {
+		confirm(message);
+		if(confirmCallBack) {
+			confirmCallBack();
+		}
+	},
+
+	prompt: function(message, promptCallBack, title, buttonLabels, defaultText) {
+		var defaultText = typeof defaultText !== 'undefined' ? defaultText : '';
+
+		prompt(message, defaultText);
+
+		if(promptCallBack) {
+			promptCallBack();
+		}
+	},
+
+	beep: function(times) {
+		var repeats = typeof times !== 'undefined' ? times : 1;
+		if(times > 1) {
+			cordovaClone.notice(times + ' Beeps');
+		} else {
+			cordovaClone.notice('Beep');
+		}
+	},
+
+	vibrate: function(timeout) {
+		var timeout = typeof timeout !== 'undefined' ? timeout : 1000;
+		cordovaClone.notice('Vibrating', timeout);
+	}
+
+};
 
 /**
  * Bootstrapper

@@ -1,5 +1,11 @@
 Current Version
 ================
+
+# 0.2.2
+
+* Notification system for representing device states.
+* Simulated notification object with notice for vibrating and beeping
+
 # 0.2.1
 
 * Simulated navigator.geolocation object with delay features for testing

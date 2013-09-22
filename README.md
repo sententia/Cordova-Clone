@@ -31,7 +31,7 @@ So the gates have just opened. Sententia will be building components of the api 
 | Globalization            | No        | No                           |
 | InAppBrowser             | No        | Yes                          |
 | Media                    | No        | No                           |
-| Notification             | No        | Yes                          |
+| Notification             | Yes       | Yes                          |
 | Splashscreen             | No        | No                           |
 | Storage                  | No        | Yes                          |
 

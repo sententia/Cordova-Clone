@@ -24,7 +24,7 @@ So the gates have just opened. Sententia will be building components of the api 
 | Compass                  | No        | No                           |
 | Connection               | No        | No                           |
 | Contacts                 | No        | No                           |
-| Device                   | No        | No                           |
+| Device                   | Yes       | No                           |
 | Events                   | No        | No                           |
 | File                     | No        | No                           |
 | Geolocation              | Yes       | Yes                          |
@@ -35,7 +35,7 @@ So the gates have just opened. Sententia will be building components of the api 
 | Splashscreen             | No        | No                           |
 | Storage                  | No        | Yes                          |
 
-Please review to the version-history.md file for a more outlined progress
+Please review the version-history.md file for a more outlined progress
 
 Contributing
 =============

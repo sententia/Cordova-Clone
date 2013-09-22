@@ -54,6 +54,8 @@ CordovaClone = function() {
 	 */
 	function parseContents() {
 		that.jsonObject = JSON.parse(this.response);
+		var deviceEvent = new Event('config_updated');
+		document.dispatchEvent(deviceEvent);
 	}
 
 	/**
@@ -110,9 +112,19 @@ CordovaClone = function() {
 
 	this.readConfig();
 
+	this.setInterval(function() {
+		that.jsonObject = that.readConfig();
+	}, 'updater', 5000);
+
 	CordovaClone.prototype.singleton = this;
 	return this;
 };
+/**
+ *  Holds the device object
+ */
+document.addEventListener("config_updated", function() {
+	window.device = cordovaClone.jsonObject.device;
+})
 /**
  * navigator.geolocation
  */

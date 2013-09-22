@@ -18,5 +18,14 @@
 		{
 			"errorcode": 1
 		}
+	},
+	"device": 
+	{
+		"name": null,
+		"cordova": null,
+		"platform": null,
+		"uuid": null,
+		"version": null,
+		"model": null
 	}
 }

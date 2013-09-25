@@ -30,4 +30,17 @@ $(document).ready(function(e) {
  * Stub for CordovaClone deviceready event
  * @return {[type]} [description]
  */
-function main() {}
+function main() {
+
+	
+	// Now run through the setup
+	setupHandlers();
+}
+
+/**
+ * Attaches all the handlers to the various dom elements of interaction
+ * @return {void} 
+ */
+function setupHandlers() {
+
+}

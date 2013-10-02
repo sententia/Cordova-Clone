@@ -22,17 +22,17 @@ So the gates have just opened. Sententia will be building components of the api 
 | Camera                   | No        | No                           | Yes             |
 | Capture                  | No        | No                           | Yes             |
 | Compass                  | No        | No                           | Yes             |
-| Connection               | Yes       | No                           | Yes             |
+| Connection               | **Yes**   | No                           | Yes             |
 | Contacts                 | No        | No                           | Yes             |
-| Device                   | Yes       | No                           | Yes             |
+| Device                   | **Yes**   | No                           | Yes             |
 | Events                   | No        | No                           | Yes             |
 | File                     | No        | No                           | Yes             |
-| Geolocation              | Yes       | Yes                          | No              |
+| Geolocation              | **Yes**   | Yes                          | No              |
 | Globalization            | No        | No                           | Yes             |
 | InAppBrowser             | No        | Yes                          | No              |
 | Media                    | No        | No                           | Yes             |
-| Notification             | Yes       | Yes                          | No              |
-| Splashscreen             | Yes       | No                           | Yes             |
+| Notification             | **Yes**   | Yes                          | No              |
+| Splashscreen             | **Yes**   | No                           | Yes             |
 | Storage                  | No        | Yes                          | No              |
 
 Please review the version-history.md file for a more outlined progress

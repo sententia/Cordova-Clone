@@ -157,6 +157,20 @@ CordovaClone = function() {
 	return this;
 };
 /**
+ * Connection object
+ */
+navigator.connection = {
+	UNKNOWN: "unknown",
+	ETHERNET: "ethernet",
+	WIFI: "wifi",
+	CELL_2G: "2g",
+	CELL_3G: "3g",
+	CELL_4G: "4g",
+	CELL: "cellular",
+	NONE: "none",
+	type: ""
+};
+/**
  *  Holds the device object
  */
 document.addEventListener("config_updated", function() {
@@ -310,7 +324,25 @@ navigator.notification = {
 	}
 
 };
+/**
+ * The app splash screen module
+ */
+navigator.splashscreen = {
+	show: function() {
+		// As we can't have an actual splash screen let's just put
+		// up a notice
+		console.log("Showing splashscreen");
+		cordovaClone.notice("Splashscreen", 3000);
+		return;
+	},
 
+	hide: function() {
+		// As we can't have an actual splash screen let's just put
+		// in a console log
+		console.log("Hiding Splashscreen");
+		return;
+	}
+};
 /**
  * Bootstrapper
  */

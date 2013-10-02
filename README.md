@@ -16,24 +16,24 @@ Current Status
 
 So the gates have just opened. Sententia will be building components of the api as needed for his apps. If you want one desperately please drop us a line. 
 
-| Plugin                   | Completed | Browser Supported by Default |
-| ------------------------ | :-------: | :--------------------------: |
-| Accelerometer            | No        | No                           |
-| Camera                   | No        | No                           |
-| Capture                  | No        | No                           |
-| Compass                  | No        | No                           |
-| Connection               | No        | No                           |
-| Contacts                 | No        | No                           |
-| Device                   | Yes       | No                           |
-| Events                   | No        | No                           |
-| File                     | No        | No                           |
-| Geolocation              | Yes       | Yes                          |
-| Globalization            | No        | No                           |
-| InAppBrowser             | No        | Yes                          |
-| Media                    | No        | No                           |
-| Notification             | Yes       | Yes                          |
-| Splashscreen             | No        | No                           |
-| Storage                  | No        | Yes                          |
+| Plugin                   | Completed | Browser Supported by Default | Needs Emulation |
+| ------------------------ | :-------: | :--------------------------: | :-------------: |
+| Accelerometer            | No        | No                           | Yes             |
+| Camera                   | No        | No                           | Yes             |
+| Capture                  | No        | No                           | Yes             |
+| Compass                  | No        | No                           | Yes             |
+| Connection               | Yes       | No                           | Yes             |
+| Contacts                 | No        | No                           | Yes             |
+| Device                   | Yes       | No                           | Yes             |
+| Events                   | No        | No                           | Yes             |
+| File                     | No        | No                           | Yes             |
+| Geolocation              | Yes       | Yes                          | No              |
+| Globalization            | No        | No                           | Yes             |
+| InAppBrowser             | No        | Yes                          | No              |
+| Media                    | No        | No                           | Yes             |
+| Notification             | Yes       | Yes                          | No              |
+| Splashscreen             | Yes       | No                           | Yes             |
+| Storage                  | No        | Yes                          | No              |
 
 Please review the version-history.md file for a more outlined progress
 

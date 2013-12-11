@@ -19,7 +19,7 @@ So the gates have just opened. Sententia will be building components of the api 
 | Plugin                   | Completed | Browser Supported by Default | Needs Emulation |
 | ------------------------ | :-------: | :--------------------------: | :-------------: |
 | Accelerometer            | No        | No                           | Yes             |
-| Camera                   | No        | No                           | Yes             |
+| Camera                   | **Yes**   | No                           | Yes             |
 | Capture                  | No        | No                           | Yes             |
 | Compass                  | No        | No                           | Yes             |
 | Connection               | **Yes**   | No                           | Yes             |
@@ -29,11 +29,11 @@ So the gates have just opened. Sententia will be building components of the api 
 | File                     | No        | No                           | Yes             |
 | Geolocation              | **Yes**   | Yes                          | No              |
 | Globalization            | No        | No                           | Yes             |
-| InAppBrowser             | No        | Yes                          | No              |
+| InAppBrowser             | N/A       | **Yes**                       | No              |
 | Media                    | No        | No                           | Yes             |
 | Notification             | **Yes**   | Yes                          | No              |
 | Splashscreen             | **Yes**   | No                           | Yes             |
-| Storage                  | No        | Yes                          | No              |
+| Storage                  | N/A       | **Yes**                      | No              |
 
 Please review the version-history.md file for a more outlined progress
 

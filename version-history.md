@@ -1,6 +1,10 @@
 Current Version
 ================
 
+# 0.3.0
+
+* Simulation of Camera encoded base64 string return.
+
 # 0.2.2
 
 * Notification system for representing device states.

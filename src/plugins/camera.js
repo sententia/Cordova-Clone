@@ -149,6 +149,18 @@
 		dropZone.addEventListener('drop', handleDrop);
 		dropZone.addEventListener('dragover', highlightDrop);
 		dropZone.addEventListener('dragleave', leaveDrop);
+ 	},
+
+ 	/**
+ 	 * Stub with console echo. 
+ 	 * @param  {[type]} cameraSuccess [description]
+ 	 * @param  {[type]} cameraError   [description]
+ 	 * @return {[type]}               [description]
+ 	 */
+ 	cleanUp: function(cameraSuccess, cameraError) {
+ 		var cameraSuccess = typeof === 'function' ? cameraSuccess : function() {console.log("Camera clean up success")};
+ 		var cameraError = typeof === 'function' ? cameraError : function(message) {console.log("Camera error: " + message)};
+ 		cameraSuccess();
  	}
  }
 
